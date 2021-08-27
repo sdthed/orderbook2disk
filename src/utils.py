@@ -1,6 +1,8 @@
 import sys
 import json
-from crypto_apis.kraken import API
+
+# from crypto_apis.kraken import API
+from .wsapi.api import API
 
 
 def clear(height):
