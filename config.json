@@ -1,0 +1,13 @@
+{
+  "repo": {
+    "dataDir": "/Users/svendroste/Developer/crypto/gcloud/book/data",
+		"depth": 100,
+    "pairNames": [
+      "xbtusd",
+      "ethusd",
+      "adausd",
+      "dotusd"
+    ]
+  }
+}
+
