@@ -6,7 +6,9 @@
       "xbtusd",
       "ethusd",
       "adausd",
-      "dotusd"
+      "xbteur",
+      "etheur",
+      "adaeur"
     ]
   }
 }

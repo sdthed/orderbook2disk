@@ -7,7 +7,7 @@ from src.data_feed import DataFeed
 def main():
     conf = read_json("config.json")
     pair_names = conf["repo"]["pairNames"]
-    pair_names = pair_names[:2]
+    # pair_names = pair_names[:2]
 
     assetInfo = AssetInfo()
     assetPairs = [assetInfo.get_asset_pair(name) for name in pair_names]

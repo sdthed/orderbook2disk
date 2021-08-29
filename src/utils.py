@@ -1,5 +1,5 @@
-import sys
-import json
+import sys, os, json
+import zipfile
 
 # from crypto_apis.kraken import API
 from .wsapi.api import API
@@ -14,6 +14,22 @@ def clear(height):
 def read_json(path):
     with open(path) as json_file:
         return json.load(json_file)
+
+
+def rm(file2remove: str):
+    os.remove(file2remove)
+
+
+def zip_(file2zip: str):
+    fn = f"{file2zip}.zip"  # (target) file_name
+    c = zipfile.ZIP_DEFLATED
+    with zipfile.ZipFile(fn, "w", compression=c, compresslevel=9) as zip_ref:
+        zip_ref.write(file2zip)
+
+
+def unzip_(file2unzip: str, target_dir: str = "."):
+    with zipfile.ZipFile(file2unzip, "r") as zip_ref:
+        zip_ref.extractall(target_dir)
 
 
 def query_asset_pairs():

@@ -2,11 +2,12 @@ import time
 import os
 import json
 from io import TextIOWrapper
+from .utils import zip_, rm
 
 
 def get_curr_hour_ts() -> int:
-    # return int(time.time()) // (60) * 60
-    return int(time.time()) // (60 * 60) * 60 * 60
+    return int(time.time()) // (60) * 60
+    # return int(time.time()) // (60 * 60) * 60 * 60
 
 
 class Repo:
@@ -74,6 +75,8 @@ class RepoWriter(Repo):
 
     def close_file(self) -> None:
         self.file.close()
+        zip_(self.target_path)
+        rm(self.target_path)
         print(f"closed file: {self.target_path}")
 
     def handle_file_path(self):
